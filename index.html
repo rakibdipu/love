@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Will You Go On A Date With Me? 💖</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating hearts background container -->
+  <div id="hearts-bg"></div>
+
+  <!-- Background Romantic Audio (Authentic Romantic Piano Track) -->
+  <audio id="romantic-bgm" preload="auto" loop>
+    <source src="assets/romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Top Floating Navigation -->
+  <header class="top-nav">
+    <button id="lang-toggle-btn" class="nav-btn">🌐 বাংলা</button>
+    <button id="music-toggle-btn" class="nav-btn">🎵 Music: OFF</button>
+    <button id="settings-btn" class="nav-btn">⚙️</button>
+  </header>
+
+  <!-- Main Interactive App Wrapper -->
+  <main class="app-wrapper">
+
+    <!-- ==========================================
+         STEP 1: THE HERO PROPOSAL (RUNAWAY BUTTON)
+         ========================================== -->
+    <section id="step-1-proposal" class="step-container glass-card">
+      <div class="step-header">
+        <div class="top-badge-row">
+          <span class="step-badge">Question of the Century 🌹</span>
+          <button id="view-letter-btn" class="mini-letter-btn" title="Open Secret Letter">💌 Secret Letter</button>
+        </div>
+        <span id="crush-display-name" class="crush-highlight">Rabbit 🐰</span>
+        <div style="font-size: 0.95rem; color: #ff758f; margin-top: -2px; margin-bottom: 8px; font-weight: 600;">(For Raisa 💕)</div>
+        <h1 id="proposal-title" class="step-title">Will you go on a date with me? 💖</h1>
+      </div>
+
+      <!-- 100% Offline Cute Animated SVG Character -->
+      <div class="character-box" id="character-display">
+        <!-- Rendered by character.js -->
+      </div>
+
+      <!-- Button Arena: Both buttons clearly visible initially! -->
+      <div class="proposal-box">
+        <div class="button-arena" id="button-arena">
+          <button id="yes-btn" class="btn-primary">YES! Absolutely 🥰</button>
+          <button id="no-btn" class="btn-no">No 🙈</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 2: CELEBRATION BURST
+         ========================================== -->
+    <section id="step-2-celebration" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">WOOHOO! 🎉</span>
+        <h1 id="celeb-title" class="step-title">YAAAY! I Knew You'd Say Yes! 🎉</h1>
+        <p id="celeb-sub" class="step-subtitle">Let's plan our dream date together step by step! ✨</p>
+      </div>
+
+      <div class="character-box" id="celebration-character">
+        <!-- Re-renders with celebration animation -->
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+        <button id="celeb-continue-btn" class="btn-primary">Plan Our Date Step-by-Step 👉</button>
+        <button id="celeb-quick-wa-btn" class="btn-whatsapp">📲 Send Quick "YES!" to WhatsApp 💖</button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 3: DATE & TIME PICKER
+         ========================================== -->
+    <section id="step-3-date" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">Step 1 of 4 📅</span>
+        <h1 id="step-date-title" class="step-title">When are we going? 📅</h1>
+        <p id="step-date-sub" class="step-subtitle">Pick our special day and your favorite time of day</p>
+      </div>
+
+      <div class="date-picker-box">
+        <input type="date" id="date-input" class="date-input">
+      </div>
+
+      <div id="time-slots-container" class="time-slots-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="wizard-nav">
+        <div></div>
+        <button id="step3-next" class="btn-primary">Continue 👉</button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 4: FOOD & CUISINE MENU
+         ========================================== -->
+    <section id="step-4-food" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">Step 2 of 4 🍕</span>
+        <h1 id="step-food-title" class="step-title">What are we eating? 🍕🍣</h1>
+        <p id="step-food-sub" class="step-subtitle">Select everything that makes your mouth water (Pick 1 or more)</p>
+      </div>
+
+      <div id="food-grid" class="selection-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="wizard-nav">
+        <button id="step4-back" class="btn-secondary">👈 Back</button>
+        <button id="step4-next" class="btn-primary">Continue 👉</button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 5: DATE ACTIVITIES
+         ========================================== -->
+    <section id="step-5-activity" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">Step 3 of 4 🎡</span>
+        <h1 id="step-act-title" class="step-title">What are we doing? 🎡🎬</h1>
+        <p id="step-act-sub" class="step-subtitle">Choose our fun date adventures together</p>
+      </div>
+
+      <div id="activity-grid" class="selection-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="wizard-nav">
+        <button id="step5-back" class="btn-secondary">👈 Back</button>
+        <button id="step5-next" class="btn-primary">Continue 👉</button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 6: DRESS CODE & SPECIAL WISH
+         ========================================== -->
+    <section id="step-6-outfit" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">Step 4 of 4 👗</span>
+        <h1 id="step-outfit-title" class="step-title">Dress Code & Special Wish 👗💌</h1>
+        <p id="step-outfit-sub" class="step-subtitle">How should we dress up, and anything special on your mind?</p>
+      </div>
+
+      <div id="dress-options-container" class="selection-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="secret-note-box">
+        <textarea id="secret-note-input" placeholder="Write a secret wish, sweet note, or anything special you want... 💕"></textarea>
+      </div>
+
+      <div class="wizard-nav">
+        <button id="step6-back" class="btn-secondary">👈 Back</button>
+        <button id="step6-finish" class="btn-primary">Generate Date Pass 🎟️✨</button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STEP 7: OFFICIAL ROMANTIC DATE TICKET
+         ========================================== -->
+    <section id="step-7-ticket" class="step-container glass-card hidden">
+      <div class="step-header">
+        <span class="step-badge">Mission Complete ❤️</span>
+        <h1 class="step-title">Here is Our Official Date Pass! 🎟️</h1>
+        <div id="wa-status-banner" class="wa-status-banner" style="margin-top: 8px;">
+          📲 Auto-syncing to WhatsApp: <strong>+8801734738311</strong>
+        </div>
+      </div>
+
+      <!-- The Boarding Pass Ticket -->
+      <div class="ticket-wrapper" id="printable-ticket">
+        <div class="ticket-header">
+          <div>
+            <div id="ticket-header-text" class="ticket-header-title">OFFICIAL DATE BOARDING PASS</div>
+            <div id="ticket-sub-text" class="ticket-header-sub">Valid for One Unforgettable Romance Journey</div>
+          </div>
+          <span class="ticket-badge-pill">VIP COUPLE</span>
+        </div>
+
+        <div class="ticket-body">
+          <div class="ticket-row">
+            <div id="lbl-passenger" class="ticket-label">PASSENGER</div>
+            <div id="ticket-passenger" class="ticket-val highlight">Rabbit 🐰 (Raisa) ❤️ Rakib Hassan Dipu</div>
+          </div>
+
+          <div class="ticket-row">
+            <div id="lbl-date" class="ticket-label">DATE & TIME</div>
+            <div id="ticket-datetime" class="ticket-val">Saturday • Candlelight Dinner 🕯️</div>
+          </div>
+
+          <div class="ticket-divider">
+            <span class="ticket-notch-left"></span>
+            <span class="ticket-notch-right"></span>
+          </div>
+
+          <div class="ticket-row">
+            <div id="lbl-food" class="ticket-label">MENU CRAVINGS</div>
+            <div id="ticket-food" class="ticket-val">Cheesy Pizza, Ice Cream</div>
+          </div>
+
+          <div class="ticket-row">
+            <div id="lbl-activity" class="ticket-label">ITINERARY</div>
+            <div id="ticket-activity" class="ticket-val">Movie Date, Coffee & Long Talks</div>
+          </div>
+
+          <div class="ticket-row">
+            <div id="lbl-dress" class="ticket-label">DRESS CODE</div>
+            <div id="ticket-dress" class="ticket-val">Fancy & Elegant 👗</div>
+          </div>
+
+          <div class="ticket-row" id="ticket-note-row">
+            <div id="lbl-note" class="ticket-label">SPECIAL WISH</div>
+            <div id="ticket-note" class="ticket-val">"Can't wait!"</div>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <div class="ticket-seal">
+              <span>🔒</span>
+              <span id="ticket-seal-text">ACCEPTED & NON-REFUNDABLE ❤️</span>
+            </div>
+          </div>
+
+          <div class="ticket-barcode-row">
+            <div class="barcode-strip">||||| | |||| ||| ||||| ||</div>
+            <div id="ticket-number" class="ticket-number">PASS-892419-LOVE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="ticket-actions">
+        <button id="whatsapp-share-btn" class="btn-whatsapp">📲 Send Plan to WhatsApp</button>
+        <div class="actions-row">
+          <button id="copy-summary-btn" class="btn-secondary">📋 Copy Summary</button>
+          <button id="download-ticket-btn" class="btn-secondary">📸 Save / Print</button>
+        </div>
+        <button id="restart-app-btn" class="btn-secondary" style="margin-top: 6px;">🔄 Edit / Plan Another</button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================
+       SECRET LETTER POPUP MODAL
+       ========================================== -->
+  <div id="letter-modal" class="modal-overlay hidden">
+    <div class="modal-content" style="max-width: 480px; text-align: center;">
+      <div style="font-size: 2.8rem; margin-bottom: 8px;">💌</div>
+      <h2 id="letter-title" class="modal-title" style="text-align: center;">A Secret Letter For You</h2>
+      <div class="letter-content" style="text-align: left;">
+        <p id="letter-body-text">Hey Pookie, you make everyday a little brighter. I have a very special question to ask you...</p>
+      </div>
+      <div style="text-align: center; margin-top: 18px;">
+        <button id="close-letter" class="btn-primary">Read & Answer Question 💖</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       AUTOMATIC WHATSAPP REDIRECT MODAL
+       ========================================== -->
+  <div id="whatsapp-redirect-modal" class="modal-overlay hidden">
+    <div class="modal-content" style="max-width: 440px; text-align: center; border: 2.5px solid #25d366;">
+      <div class="wa-icon-pulse">📲</div>
+      <h2 id="wa-modal-title" class="modal-title" style="text-align: center; color: #128c7e; margin-bottom: 6px;">Date Pass Confirmed! 🎉</h2>
+      <p id="wa-modal-desc" style="color: #4a1525; margin: 8px 0 16px; font-size: 0.95rem; line-height: 1.5;">
+        Opening WhatsApp automatically to send your date pass to <strong id="wa-modal-phone">+8801734738311</strong>...
+      </p>
+      <div id="wa-countdown-badge" class="countdown-badge">Opening in 2s...</div>
+      <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <button id="wa-instant-send-btn" class="btn-whatsapp">Open WhatsApp Now 🚀</button>
+        <button id="wa-cancel-btn" class="btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">View Ticket First</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       SETTINGS / CUSTOMIZER MODAL
+       ========================================== -->
+  <div id="settings-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h2 class="modal-title">⚙️ App Settings</h2>
+      
+      <div class="form-group">
+        <label for="cfg-crush-name">Crush / Partner Name:</label>
+        <input type="text" id="cfg-crush-name" placeholder="Rabbit 🐰 (Raisa)">
+      </div>
+
+      <div class="form-group">
+        <label for="cfg-sender-name">Your Name:</label>
+        <input type="text" id="cfg-sender-name" placeholder="Rakib Hassan Dipu">
+      </div>
+
+      <div class="form-group">
+        <label for="cfg-wp-number">Your WhatsApp Number (with country code):</label>
+        <input type="text" id="cfg-wp-number" placeholder="8801734738311">
+      </div>
+
+      <div class="modal-actions">
+        <button id="close-settings" class="btn-secondary">Cancel</button>
+        <button id="save-settings" class="btn-primary">Save Settings 💖</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/runaway.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
